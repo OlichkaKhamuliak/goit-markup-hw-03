@@ -13,11 +13,16 @@
     --dairy: #FCFCFC;
 }
 
-/* Base styles */
+/* BASE STYLES */
 body {
     font-family: "Roboto", sans-serif;
     color: #434455;
     background-color: var(--white);
+}
+/* Reset start */
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
 }
 
 .link {
@@ -27,17 +32,80 @@ body {
 
 .list{
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
+
+/* Гумова картинка */
+img {
+display: block;
+max-width: 100%;
+height: auto;
+
+/* Alternative */
+/* display: block;
+max-width: 100%;
+height: 100%;
+object-fit: cover; */
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Reset end */
+.section {
+    padding-bottom: 120px;
+}
+
+.section:last-child {
+    padding-bottom: 0;
+}
+.container {
+width: 1158px;
+margin-left: auto;
+margin-right: auto;
+padding-left: 15px;
+padding-right: 15px;
+
+/* Рамки, які підсвічують наш контерйнер */
+outline: 2px solid red;
+outline-offset: -2px;
+}
+
+/* Приховані заголовки */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
 /* HEADER */
 
     /* Navigation */
 
-.header-nav {
+header>.container {
+    display: flex;
+    justify-content: space-between;
+}
 
+.header-nav {
+display: flex;
 }
     /* Logo */
 
 .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 76px;
     color: var(--iris);
     font-family: Raleway, sans-serif;
     font-size: 18px;
@@ -57,6 +125,9 @@ body {
 
     /* Navigation list */
 .nav-list {
+    display: flex;
+    gap: 40px;
+    align-items: center;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -64,6 +135,13 @@ body {
     font-weight: 500;
 }
 .nav-list-item {}
+
+.nav-list-link {
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: #8E8F99;
+}
 
 .nav-list-link:hover, .nav-list-link:focus {
     color: var(--ocean);
@@ -79,10 +157,22 @@ body {
     letter-spacing: 0.02em;
 }
 
-.address-list {}
+.address-list {
+    display: flex;
+    gap: 40px;
+    /* align-items: center; */
+
+}
 
 .address-list-item {}
 
+.address-item-link {
+    display: block;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    background-color: #8E8F99;
+
+}
 .address-item-link:hover, .address-item-link:focus {
     color: var(--ocean, #404BBF);
 }
@@ -95,17 +185,34 @@ body {
     background-color: var(--navy-blue);
     flex-shrink: 0;
 }
-    
+   
+.hero-container {
+padding-top: 188px;
+padding-bottom: 188px;
+}
+
 .hero-title {
+    width: 496px;
+    margin: 0 auto;
+    margin-bottom: 48px;
     color: var(--white);
     text-align: center;
     font-size: 56px;
     line-height: 1.07;
     letter-spacing: 0.02em;
 }
-    
+.hero-btn-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: center;
+}
 .hero-btn {
+    border-radius: 4px;
+    border: 0 solid transparent;
+    padding: 16px 32px;
     background: var(--iris);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
     color: var(--white);
     font-weight: 500;
     line-height: 1.5;
@@ -116,15 +223,12 @@ body {
 
 .hero-btn:hover, .hero-btn:focus {
     background: var(--ocean);
-    cursor: pointer;
 }
 
     /* Skills section */
 
 .skills-section {
-}
-
-.skills-title {
+    padding-top: 120px;
 }
 
 .skills-list { }
@@ -133,6 +237,7 @@ body {
 }
 
 .skills-list-subtitle {
+    margin-bottom: 8px;
     font-size: 20px;
     font-weight: 500;
     line-height: 1.2;
@@ -150,13 +255,15 @@ body {
 
 .products-section {}
 
-.products-title {
+.products-title, .team-title  {
     text-align: center;
     font-size: 36px;
     line-height: 1.11;
     text-transform: capitalize;
     letter-spacing: 0.02em;
     color: var(--grey);
+    margin: 0 auto;
+    margin-bottom: 72px;
 }
 
 .products-list {}
@@ -169,15 +276,6 @@ body {
 
 .team-section {
     background-color: var(--cloud);
-}
-
-.team-title {
-    text-align: center;
-    font-size: 36px;
-    line-height: 1.11;
-    text-transform: capitalize;
-    letter-spacing: 0.02em;
-    color: var(--grey);
 }
 
 .team-list {}
@@ -224,8 +322,6 @@ body {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    cursor: pointer;
-
 }
 
 .portfolio-btn-item:hover, .portfolio-btn-item:focus {
@@ -270,3 +366,5 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
+
+
